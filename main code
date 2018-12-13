@@ -1,0 +1,64 @@
+#include <iostream>;
+#include <stdlib.h>;
+#include <string>;
+#include <ctime>
+using namespace std;
+
+int main(void)
+{
+	//create seed from current PC time
+	srand(time(0));
+
+	//start random generation
+	//get the variable "random"
+	int random;
+	string r_answer;
+
+	random = rand() % 2 + 1;
+
+	//first sentense
+	int y_num;
+	string y_answer;
+	std::cout << "try to predict PC" << '\n';
+	std::cout << "Eagle - 1" << '\n' << "Tails - 2" << '\n';
+	std::cout << "Type: ";
+	std::cin >> y_num;
+
+	//Eagle and Tails for PC
+	if (random == 1)
+	{
+		r_answer = "Eagle";
+	}
+	else
+	{
+		r_answer = "Tails";
+	}
+
+	//Eagle and Tails for you
+	if (y_num == 1)
+	{
+		y_answer = "Eagle";
+	}
+	else
+	{
+		y_answer = "Tails";
+	}
+
+	//end
+	if (y_num == random)
+	{
+		std::cout << "Your choice is: " << y_answer << '\n';
+		std::cout << "PC choice is: " << r_answer << '\n';
+		std::cout << "You won!" << '\n';
+	}
+	else
+	{
+		std::cout << "Your choice is: " << y_answer << '\n';
+		std::cout << "PC choice is: " << r_answer << '\n';
+		std::cout << "Nice try, you were so close." << '\n';
+	}
+
+	system("pause");
+	return(0);
+}
+
